@@ -216,3 +216,84 @@ variable "web_key_pair_name" {
   default     = "tapresearch"
 }
 
+# Memcache / Redis Cache Variables - Elastic
+
+variable "product_domain" {
+  description = "Product domain abbreviation this memcached belongs to"
+  default        = "tsi"
+}
+
+variable "environment" {
+  description = "Environment of this memcached resides in"
+  default        = "string"
+}
+
+variable "description" {
+  description = "Description of what this memcached used for"
+  default     = "Cache of ec2 inventory search data"
+}
+
+variable "service_name" {
+  description = "Name of the service this memcached belongs to"
+  default        = "tsiecis"
+}
+
+variable "maintenance_window" {
+  description = "Preferred maintenance window for this memcached"
+  default = "sun:15:00-sun:16:00"
+}
+
+variable "node_type" {
+  description = "Node type for this memcached"
+  default     = "cache.m4.large"
+}
+
+variable "num_cache_nodes" {
+  description = "Number of cache nodes for this memcached"
+  default     = "2"
+}
+
+variable "parameter_group_name" {
+  description = "Name of the parameter group used by this memcached cluster"
+  default     = "default.memcached1.4"
+}
+
+
+variable "apply_immediately" {
+  description = "Whether to apply cluster changes immediately, or during maintenance window"
+  default        = "true"
+}
+
+variable "engine_version" {
+  description = "Version of memcached engine for this cluster"
+  type        = string
+  default     = "1.4.34"
+}
+
+variable "subnet_group_name" {
+  description = "Name of the subnet group this cluster resides in"
+  default        = "test"
+}
+
+variable "notification_topic_arn" {
+  description = "ARN of the SNS topic that should receive notification about this memcached cluster"
+  type        = string
+  default     = ""
+}
+
+variable "port" {
+  description = "Port used for this memcached"
+  type        = string
+  default     = "11211"
+}
+
+variable "az_mode" {
+  description = "Whether to provision in single-az or cross-az"
+  default        = "cross-az"
+}
+
+variable "additional_tags" {
+  type        = map(string)
+  default     = {}
+  description = "Common additional tags"
+}

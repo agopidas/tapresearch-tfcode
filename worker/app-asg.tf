@@ -38,8 +38,6 @@ resource "aws_launch_configuration" "app" {
   image_id        = data.aws_ami.amazon_linux.id
   instance_type   = var.app_instance_type
   security_groups = [aws_security_group.app.id]
-
-  #TODO REMOVE
   key_name    = var.app_key_pair_name
   name_prefix = "${var.name}-app-vm-"
 
