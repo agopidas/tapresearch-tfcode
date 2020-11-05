@@ -1,0 +1,14 @@
+
+#System Files
+.DS_Store
+
+### Terraform ###
+# Compiled files
+*.tfstate
+*.tfstate.*
+
+# Module directory
+.terraform/
+
+# .tfvars files
+*.tfvars
