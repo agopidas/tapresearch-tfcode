@@ -3,7 +3,7 @@
 .DS_Store
 
 ### Terraform ###
-# Compiled files
+# Compiled files (This might be needed if all of infra is handled across various team members local machines and the infra is version controlled)
 *.tfstate
 *.tfstate.*
 

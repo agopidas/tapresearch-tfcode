@@ -38,8 +38,6 @@ resource "aws_launch_configuration" "web" {
   image_id        = data.aws_ami.amazon_linux.id
   instance_type   = var.web_instance_type
   security_groups = [aws_security_group.web.id]
-
-  #TODO REMOVE
   key_name    = var.web_key_pair_name
   name_prefix = "${var.name}-web-vm-"
 
